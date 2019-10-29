@@ -3,8 +3,11 @@ package com.wuss.leetCode;
 public class Main6 {
 
     public String convert(String s, int numRows) {
-        int len = (numRows -1)*2;
         int strLen = s.length();
+        if(numRows == 1 || strLen <= 1){
+            return s;
+        }
+        int len = (numRows -1)*2;
         StringBuilder sb = new StringBuilder();
         for (int i =0;i<numRows;i++){
             int start = i,end = len - i;
