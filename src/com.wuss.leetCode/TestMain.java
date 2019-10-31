@@ -67,6 +67,9 @@ public class TestMain {
             return (T) reusltArr;
 
         }
+        if("java.lang.String[]".equals(name)){
+            return (T) value.split(",");
+        }
         return null;
     }
 }
