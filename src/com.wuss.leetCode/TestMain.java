@@ -70,6 +70,16 @@ public class TestMain {
         if("java.lang.String[]".equals(name)){
             return (T) value.split(",");
         }
+        if("com.wuss.leetCode.ListNode".equals(name)){
+            String[] split = value.split(",");
+            int[] reusltArr = new int[split.length];
+            for (int i=0;i<split.length;i++){
+                reusltArr[i] = Integer.valueOf(split[i]);
+            }
+            ListNode node = ListNode.getList(reusltArr);
+            return (T) node;
+
+        }
         return null;
     }
 }
