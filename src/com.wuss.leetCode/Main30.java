@@ -1,9 +1,7 @@
 package com.wuss.leetCode;
 
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 /**
  * 30. 串联所有单词的子串
@@ -34,6 +32,39 @@ import java.util.List;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 public class Main30 {
+//    public  List<Integer> findSubstring(String s, String[] words) {
+//        List<Integer> list = new ArrayList<>();
+//        int nums = words.length;
+//        if (nums == 0){
+//            return list;
+//        }
+//        int len = words[0].length();
+//        int allLen = len * nums;
+//        int stringLen = s.length();
+//        if (stringLen < allLen){
+//            return list;
+//        }
+//        List<String> oriList = Arrays.asList(words);
+//        List<String> newList = new ArrayList<>(nums);
+//        for (int i=0;i<= stringLen - allLen;i++){
+//            newList.clear();
+//            for (int j=0;j<nums;j++){
+//                newList.add(s.substring(i+len*j,i+len*j+len));
+//            }
+//            if (oriList.size()!= newList.size()){
+//                continue;
+//            }
+//            for (String str : oriList){
+//                newList.remove(str);
+//            }
+//            if (newList.isEmpty()){
+//                list.add(i);
+//            }
+//        }
+//        return list;
+//
+//    }
+
     public  List<Integer> findSubstring(String s, String[] words) {
         List<Integer> list = new ArrayList<>();
         int nums = words.length;
@@ -46,22 +77,39 @@ public class Main30 {
         if (stringLen < allLen){
             return list;
         }
-        List<String> oriList = Arrays.asList(words);
-        List<String> newList = new ArrayList<>(nums);
-        for (int i=0;i<= stringLen - allLen;i++){
-            newList.clear();
+        Map<String,Integer> map = new HashMap<>();
+        Integer value = 0;
+        for (String str : words){
+            value = map.get(str);
+            value = value == null? 1:value+1;
+            map.put(str,value);
+        }
+        Map<String,Integer> newMap = new HashMap<>();
+        String newStr;
+        String tempStr;
+        for (int i=stringLen - allLen;i>= 0;i--){
+            newMap.clear();
+            newMap.putAll(map);
+            newStr = s.substring(i,i+allLen);
             for (int j=0;j<nums;j++){
-                newList.add(s.substring(i+len*j,i+len*j+len));
+                tempStr = newStr.substring(j*len,j*len+len);
+                value = newMap.get(tempStr);
+                if (value == null || value <= 0){
+                    break;
+                }
+                value --;
+                if (value == 0){
+                    newMap.remove(tempStr);
+                }else {
+                    newMap.put(tempStr,value );
+                }
+
             }
-            if (oriList.size()!= newList.size()){
-                continue;
-            }
-            for (String str : oriList){
-                newList.remove(str);
-            }
-            if (newList.isEmpty()){
+            if (newMap.isEmpty()){
                 list.add(i);
             }
+
+
         }
         return list;
 
