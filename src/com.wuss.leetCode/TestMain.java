@@ -37,7 +37,12 @@ public class TestMain {
                     param[i] = setValue(parameterTypes[i],scanner.next());
                 }
                 Object result = method.invoke(target,param);
-                System.out.println(result);
+                if (result.getClass().isArray()){
+                    System.out.println(Arrays.toString((int[]) result));
+                }else {
+                    System.out.println(result);
+                }
+
             }
         }catch (Exception e){
             e.printStackTrace();
