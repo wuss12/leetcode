@@ -36,16 +36,16 @@ public class Main56 {
                 }
                 int[][] merge1= merge(intervals[i][0],intervals[i][1],intervals[j][0],intervals[j][1]);
                 if (merge1.length ==1){
-                    int[][] ints = new int[intervals.length-1][];
-                    int index = 0;
-                    for (int k=0;k<intervals.length;k++){
-                        if (k == i || k == j){
-                            continue;
-                        }
-                        ints[index++] = intervals[k];
+                    int len = intervals.length;
+                    if (i>j){
+                        intervals[i] =intervals[len -1];
+                        intervals[j] = merge1[0];
+                    }else {
+                        intervals[j] =intervals[len -1];
+                        intervals[i] = merge1[0];
                     }
-                    ints[index] = merge1[0];
-                    intervals = ints;
+
+                    intervals = Arrays.copyOfRange(intervals,0,len-1);
                     i=0;
                 }
 
@@ -65,7 +65,8 @@ public class Main56 {
        Main56 main56 = new Main56();
 //        int[][] ints = {{1,3},{2,6},{8,10},{15,18}};
 //        int[][] ints = {{1,4},{4,6},{5,15},{15,18}};
-        int[][] ints = {{2,3},{4,5},{6,7},{8,9},{1,10}};
+//        int[][] ints = {{2,3},{4,5},{6,7},{8,9},{1,10}};
+        int[][] ints = {{1,4},{4,5}};
         System.out.println(main56.merge(ints));
     }
 }
