@@ -199,7 +199,6 @@ public class Main65 {
         while (scanner.hasNext()){
             value = scanner.nextLine();
             System.out.println(main65.isNumber(value));
-            System.out.println(main65.isNumber1(value));
 //            System.out.println(main65.isNum(value));
         }
     }
