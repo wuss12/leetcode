@@ -32,7 +32,14 @@ public class Main70 {
         if (n ==1 || n ==2){
             return n;
         }
-        return climbStairs(n-1)+climbStairs(n-2);
+        int sum = 0;
+        int a =1,b=2;
+        for (int i=3;i<=n;i++){
+            sum = a+b;
+            a= b;
+            b = sum;
+        }
+        return sum;
 
     }
 
