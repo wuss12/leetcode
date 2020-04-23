@@ -64,7 +64,7 @@ public class Main79 {
         return false;
     }
 
-     int[][] dirct=new int[][]{{0,-1},{0,1},{1,0},{1,-1}};
+     int[][] dirct=new int[][]{{0,-1},{0,1},{1,0},{-1,0}};
       boolean checkArea(int x,int y){
         if (x<0 || x>= r || y <0 || y>= c){
             return false;
@@ -96,11 +96,11 @@ public class Main79 {
 
     public static void main(String[] args) {
           Main79 main79= new Main79();
-        char[][] chars = new char[][]{{'A','B','C','E'},
-                {'S','F','E','S'},
-                {'A','D','E','E'}};
+//        char[][] chars = new char[][]{{'A','B','C','E'}, {'S','F','E','S'}, {'A','D','E','E'}};
+//        String str ="ABCESEEEFS";
+        char[][] chars = {{'a', 'b'},{'c','d'}};
+        String str = "acdb";
 //        char[][] chars = new char[][]{{'a'}};
-        String str ="ABCESEEEFS";
 //        String str ="a";
         boolean exist = main79.exist(chars, str);
         System.out.println(exist);
