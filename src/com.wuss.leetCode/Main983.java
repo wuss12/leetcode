@@ -85,31 +85,62 @@ public class Main983 {
 //    }
     // ## method2
 
-    int[] days, costs;
+//    int[] days, costs;
+//    Integer[] memo;
+//    int[] durations = new int[]{1, 7, 30};
+//
+//    public int mincostTickets(int[] days, int[] costs) {
+//        this.days = days;
+//        this.costs = costs;
+//        memo = new Integer[days.length];
+//        return dp(0);
+//    }
+//
+//    public int dp(int i) {
+//        if (i >= days.length) {
+//            return 0;
+//        }
+//        if (memo[i] != null) {
+//            return memo[i];
+//        }
+//        memo[i] = Integer.MAX_VALUE;
+//        int j = i;
+//        for (int k = 0; k < 3; ++k) {
+//            while (j < days.length && days[j] < days[i] + durations[k]) {
+//                j++;
+//            }
+//            memo[i] = Math.min(memo[i], dp(j) + costs[k]);
+//        }
+//        return memo[i];
+//    }
+
+    //    method 3
     Integer[] memo;
-    int[] durations = new int[]{1, 7, 30};
+    HashSet<Integer> dayset;
+    int[] costs;
+    int maxDay;
 
     public int mincostTickets(int[] days, int[] costs) {
-        this.days = days;
         this.costs = costs;
-        memo = new Integer[days.length];
-        return dp(0);
+        maxDay = Math.min(366,days[days.length-1]+30);
+        memo = new Integer[maxDay];
+        dayset = new HashSet();
+        for (int d : days) {
+            dayset.add(d);
+        }
+        return dp(1);
     }
-
-    public int dp(int i) {
-        if (i >= days.length) {
+    private int dp(int i){
+        if (i >= maxDay){
             return 0;
         }
-        if (memo[i] != null) {
+        if (memo[i] != null){
             return memo[i];
         }
-        memo[i] = Integer.MAX_VALUE;
-        int j = i;
-        for (int k = 0; k < 3; ++k) {
-            while (j < days.length && days[j] < days[i] + durations[k]) {
-                j++;
-            }
-            memo[i] = Math.min(memo[i], dp(j) + costs[k]);
+        if (dayset.contains(i)){
+            memo[i] = Math.min(Math.min(dp(i+1)+costs[0],dp(i+7)+costs[1]),dp(i+30)+costs[2]);
+        }else {
+            memo[i] = dp(i+1);
         }
         return memo[i];
     }
