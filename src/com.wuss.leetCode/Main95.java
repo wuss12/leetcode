@@ -30,6 +30,7 @@ import java.util.*;
  *    2     1         2                 3
  */
 public class Main95 {
+    //https://leetcode-cn.com/problems/unique-binary-search-trees-ii/solution/xiang-xi-tong-su-de-si-lu-fen-xi-duo-jie-fa-by-2-7/
 //    method1
 //    public List<TreeNode> generateTrees(int n) {
 //        List<TreeNode> nodeList = new ArrayList<>();
@@ -126,41 +127,79 @@ public class Main95 {
 //        return equal(temp1.left,temp2.left) && equal(temp1.right,temp2.right);
 //    }
 
-    //method2
-    public List<TreeNode> generateTrees(int n) {
-        List<TreeNode> ans = new ArrayList<TreeNode>();
-        if (n == 0) {
-            return ans;
-        }
-        return getAns(1, n);
+    //method2 递归
+//    public List<TreeNode> generateTrees(int n) {
+//        List<TreeNode> ans = new ArrayList<TreeNode>();
+//        if (n == 0) {
+//            return ans;
+//        }
+//        return getAns(1, n);
+//
+//    }
+//    private List<TreeNode> getAns(int start, int end) {
+//        List<TreeNode> ans = new ArrayList<TreeNode>();
+//        if (start>end){
+//            ans.add(null);
+//            return ans;
+//        }
+//        if (start == end){
+//            ans.add(new TreeNode(start));
+//            return ans;
+//        }
+//        for (int i=start;i<=end;i++){
+//            List<TreeNode> leftTree = getAns(start,i-1);
+//            List<TreeNode> rightTree = getAns(i+1,end);
+//            for (TreeNode l: leftTree){
+//                for (TreeNode r : rightTree){
+//                    TreeNode root = new TreeNode(i);
+//                    root.left = l;
+//                    root.right = r;
+//                    ans.add(root);
+//                }
+//            }
+//        }
+//       return ans;
+//    }
 
+// method3 dp
+    //    链接：https://leetcode-cn.com/problems/unique-binary-search-trees-ii/solution/xiang-xi-tong-su-de-si-lu-fen-xi-duo-jie-fa-by-2-7/
+public List<TreeNode> generateTrees(int n) {
+    ArrayList<TreeNode>[] dp = new ArrayList[n + 1];
+    dp[0] = new ArrayList<TreeNode>();
+    if (n == 0) {
+        return dp[0];
     }
-    private List<TreeNode> getAns(int start, int end) {
-        List<TreeNode> ans = new ArrayList<TreeNode>();
-        if (start>end){
-            ans.add(null);
-            return ans;
-        }
-        if (start == end){
-            ans.add(new TreeNode(start));
-            return ans;
-        }
-        for (int i=start;i<=end;i++){
-            List<TreeNode> leftTree = getAns(start,i-1);
-            List<TreeNode> rightTree = getAns(i+1,end);
-            for (TreeNode l: leftTree){
-                for (TreeNode r : rightTree){
-                    TreeNode root = new TreeNode(i);
-                    root.left = l;
-                    root.right = r;
-                    ans.add(root);
+    dp[0].add(null);
+    //长度为 1 到 n
+    for (int len = 1; len <= n; len++) {
+        dp[len] = new ArrayList<TreeNode>();
+        //将不同的数字作为根节点，只需要考虑到 len
+        for (int root = 1; root <= len; root++) {
+            int left = root - 1;  //左子树的长度
+            int right = len - root; //右子树的长度
+            for (TreeNode leftTree : dp[left]) {
+                for (TreeNode rightTree : dp[right]) {
+                    TreeNode treeRoot = new TreeNode(root);
+                    treeRoot.left = leftTree;
+                    //克隆右子树并且加上偏差
+                    treeRoot.right = clone(rightTree, root);
+                    dp[len].add(treeRoot);
                 }
             }
         }
-       return ans;
     }
+    return dp[n];
+}
 
-
+    private TreeNode clone(TreeNode n, int offset) {
+        if (n == null) {
+            return null;
+        }
+        TreeNode node = new TreeNode(n.val + offset);
+        node.left = clone(n.left, offset);
+        node.right = clone(n.right, offset);
+        return node;
+    }
 
 
 
