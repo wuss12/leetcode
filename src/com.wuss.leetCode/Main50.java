@@ -32,26 +32,42 @@ import java.util.Scanner;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 public class Main50 {
-    private double fastPow(double x, long n) {
-        if (n == 0){
-            return 1;
-        }
-        if (n ==1){
-            return x;
-        }
-        double half = fastPow(x,n/2);
-        if (n %2 ==0){
-            return half*half;
-        }
-        return half*half*x;
-    }
+//    private double fastPow(double x, long n) {
+//        if (n == 0){
+//            return 1;
+//        }
+//        if (n ==1){
+//            return x;
+//        }
+//        double half = fastPow(x,n/2);
+//        if (n %2 ==0){
+//            return half*half;
+//        }
+//        return half*half*x;
+//    }
+//    public double myPow(double x, int n) {
+//        double result =x;
+//        if (n<0){
+//            result = 1/x;
+//            n = -n;
+//        }
+//        return fastPow(result,n);
+//    }
     public double myPow(double x, int n) {
-        double result =x;
-        if (n<0){
-            result = 1/x;
-            n = -n;
+        long N = n;
+        if (N < 0) {
+            x = 1 / x;
+            N = -N;
         }
-        return fastPow(result,n);
+        double ans = 1;
+        double current_product = x;
+        for (long i = N; i > 0; i =i>>1) {
+            if ((i & 1) == 1) {
+                ans = ans * current_product;
+            }
+            current_product = current_product * current_product;
+        }
+        return ans;
     }
 
     public static void main(String[] args) {
