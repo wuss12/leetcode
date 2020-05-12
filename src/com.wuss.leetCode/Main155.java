@@ -106,11 +106,6 @@ public class Main155 {
         }
     }
 
-    public static void main(String[] args) {
-        Main155 main155 = new Main155();
-        MinStack stack = main155.new MinStack();
-        stack
-    }
 }
 /**
  * Your MinStack object will be instantiated and called as such:
