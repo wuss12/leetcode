@@ -1,5 +1,10 @@
 package com.wuss.leetCode;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * @program leetcode
  * @description:
@@ -37,7 +42,6 @@ public class Main101 {
 //    }
 //
 //    public boolean isSymmetric(TreeNode left,TreeNode right){
-//        System.out.println("1111");
 //        if (left == null && right ==  null){
 //            return true;
 //        }
@@ -54,7 +58,54 @@ public class Main101 {
 //        return isSymmetric(left.right,right.left);
 //    }
 
-//    public boolean isSymmetric(TreeNode root){
-//
+    //method 2
+//    public boolean isSymmetric(TreeNode root) {
+//        if (root == null){
+//            return true;
+//        }
+//        return isSymmetric(root.left,root.right);
 //    }
+//
+//    public boolean isSymmetric(TreeNode left,TreeNode right){
+//        if (left == null && right ==  null){
+//            return true;
+//        }
+//        if (left == null|| right == null){
+//            return false;
+//        }
+//        Deque<TreeNode> deque1 = new ArrayDeque<>();
+//        Deque<TreeNode> deque2 = new ArrayDeque<>();
+//        TreeNode tempL = left,tempR = right;
+//        TreeNode popL,popR;
+//        while (tempL!= null || !deque1.isEmpty()){
+//            if (tempR == null && deque2.isEmpty()){
+//                return false;
+//            }
+//            while (tempL!= null){
+//                deque1.push(tempL);
+//                tempL = tempL.left;
+//            }
+//            while (tempR != null){
+//                deque2.push(tempR);
+//                tempR = tempR.right;
+//            }
+//            if (deque1.size() != deque2.size()){
+//                return false;
+//            }
+//            popL = deque1.pop();
+//            popR = deque2.pop();
+//            if (popL.val != popR.val){
+//                return false;
+//            }
+//            tempL = popL.right;
+//            tempR = popR.left;
+//        }
+//        return tempR == null && deque2.isEmpty();
+//    }
+
+
+
+
+
+
 }
