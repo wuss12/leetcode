@@ -64,7 +64,7 @@ public class Main98 {
         return r;
     }
 
-
+// method2
     public boolean isValidBST1(TreeNode root) {
         if(root == null){
             return true;
@@ -93,6 +93,33 @@ public class Main98 {
             }
         }
         return true;
+    }
+//method 3
+
+    public boolean helper(TreeNode node, Integer lower, Integer upper) {
+        if (node == null) {
+            return true;
+        }
+
+        int val = node.val;
+        if (lower != null && val <= lower) {
+            return false;
+        }
+        if (upper != null && val >= upper) {
+            return false;
+        }
+
+        if (! helper(node.right, val, upper)) {
+            return false;
+        }
+        if (! helper(node.left, lower, val)) {
+            return false;
+        }
+        return true;
+    }
+
+    public boolean isValidBST2(TreeNode root) {
+        return helper(root, null, null);
     }
 
 
