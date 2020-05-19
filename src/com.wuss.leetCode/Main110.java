@@ -35,28 +35,46 @@ package com.wuss.leetCode;
  *  4   4
  */
 public class Main110 {
+//    public boolean isBalanced(TreeNode root) {
+//        if (root == null){
+//            return true;
+//        }
+//        int left = isBalanced(root.left,1);
+//        int right = isBalanced(root.right,1);
+//        boolean result = Math.abs(left-right)<=1;
+//        if (!result){
+//            return false;
+//        }
+//        result = isBalanced(root.left) && isBalanced(root.right);
+//        return result;
+//    }
+//
+//    private int isBalanced(TreeNode root,int level){
+//        if (root == null){
+//          return level;
+//        }
+//        int left = isBalanced(root.left,level+1);
+//        int right= isBalanced(root.right,level+1);
+//       return Math.max(left,right);
+//    }
+
+    //method2
     public boolean isBalanced(TreeNode root) {
-        if (root == null){
-            return true;
-        }
-        int left = isBalanced(root.left,1);
-        int right = isBalanced(root.right,1);
-        boolean result = Math.abs(left-right)<=1;
-        if (!result){
-            return false;
-        }
-        result = isBalanced(root.left) && isBalanced(root.right);
-        return result;
+        return helper(root)>=0;
     }
 
-    private int isBalanced(TreeNode root,int level){
-        if (root == null){
-          return level;
+    public int helper(TreeNode root){
+        if(root == null){
+            return 0;
         }
-        int left = isBalanced(root.left,level+1);
-        int right= isBalanced(root.right,level+1);
-       return Math.max(left,right);
+        int l = helper(root.left);
+        int r = helper(root.right);
+        if(l==-1 || r==-1 || Math.abs(l-r)>1) {
+            return -1;
+        }
+        return Math.max(l,r) +1;
     }
+
 
     public static void main(String[] args) {
         TreeNode treeNode = TreeNode.getTreeNode(3, 9, 20, null, null, 15, 7);
