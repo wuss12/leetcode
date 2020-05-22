@@ -54,5 +54,10 @@ public class Main113 {
         list.remove(list.size()-1);
     }
 
-
+    public static void main(String[] args) {
+        TreeNode treeNode = TreeNode.getTreeNode(5, 4, 8, 11, null, 13, 4, 7, 2, null, null, 5, 1);
+        Main113 main113 = new Main113();
+        List<List<Integer>> lists = main113.pathSum(treeNode, 22);
+        System.out.println(lists);
+    }
 }
