@@ -29,7 +29,6 @@ public class TreeNode {
             for (int j=0;j<size;j++){
                tempNode  = deque.pollFirst();
                if (tempNode == null){
-                   i=i+2;
                    continue;
                }
                if (i+1<len && arr[++i] != null){
