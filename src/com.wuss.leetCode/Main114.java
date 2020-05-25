@@ -61,31 +61,48 @@ public class Main114 {
 //       flatten(root.left,list);
 //       flatten(root.right,list);
 //    }
-    TreeNode pre;
+
+    //method2
+//    TreeNode pre;
+//    public void flatten(TreeNode root) {
+//        TreeNode temp = new TreeNode(0);
+//        pre = temp;
+//        flattenHelp(root);
+//        root = temp.right;
+//    }
+//
+//    public void flattenHelp(TreeNode root){
+//        if (root == null){
+//            return;
+//        }
+//        TreeNode left,right;
+//        left = root.left;
+//        right = root.right;
+//        pre.right = root;
+//        pre.left = null;
+//        pre=pre.right;
+//        flattenHelp(left);
+//        flattenHelp(right);
+//    }
+
+    private TreeNode pre = null;
+
     public void flatten(TreeNode root) {
-        TreeNode temp = new TreeNode(0);
-        pre = temp;
-        flattenHelp(root);
-        root = temp.right;
+        if (root == null)
+            return;
+        flatten(root.right);
+        flatten(root.left);
+        root.right = pre;
+        root.left = null;
+        pre = root;
     }
 
-    public void flattenHelp(TreeNode root){
-        if (root == null){
-            return;
-        }
-        TreeNode left,right;
-        left = root.left;
-        right = root.right;
-        pre.right = root;
-        pre.left = null;
-        pre=pre.right;
-        flattenHelp(left);
-        flattenHelp(right);
-    }
+
 
     public static void main(String[] args) {
         TreeNode treeNode = TreeNode.getTreeNode(1, 2, 5, 3, 4, null, 6);
         Main114 main114 = new Main114();
         main114.flatten(treeNode);
+        System.out.println();
     }
 }
