@@ -1,9 +1,6 @@
 package com.wuss.leetCode;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @program leetcode
@@ -75,6 +72,9 @@ public class Main146 {
 
 
     }
+
+
+
 
     public static void main(String[] args) {
         LRUCache cache = new LRUCache( 2 /* 缓存容量 */ );
