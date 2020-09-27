@@ -69,21 +69,40 @@ public class Main235 {
         TreeNode pre = null;
         int pV = p.val;
         int qV = q.val;
-        int min = Math.min(pV, qV);
-        int max = Math.max(pV, qV);
+        int min = Math.min(pV,qV);
+        int max = Math.max(pV,qV);
         while (true) {
             int value = temp.val;
-            pre = temp;
-            if (value > max) {
-                temp = temp.left;
-                continue;
+            if (hasTreeNode(temp,p)&& hasTreeNode(temp,q)){
+                pre = temp;
+                if (value > max){
+                    temp = temp.left;
+                    continue;
+                }
+                if (value < min){
+                    temp = temp.right;
+                    continue;
+                }
+                break;
+
+            }else {
+                break;
             }
-            if (value < min) {
-                temp = temp.right;
-                continue;
-            }
-            break;
         }
         return pre;
+    }
+
+    public boolean hasTreeNode(TreeNode root, TreeNode p) {
+
+        if (root == null){
+            return p ==null;
+        }
+        if (root.val == p.val){
+            return true;
+        }
+        if (root.val < p.val){
+            return hasTreeNode(root.right,p);
+        }
+        return hasTreeNode(root.left,p);
     }
 }
