@@ -24,6 +24,7 @@ public class TestMain {
                     continue;
                 }
                 method = m;
+                method.setAccessible(true);
                 break;
             }
             if(method == null){
