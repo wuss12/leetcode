@@ -65,4 +65,50 @@ public class Main31 {
         nums[left] = nums[right];
         nums[right] = temp;
     }
+
+
+
+
+
+    public void nextPermutation1(int[] nums) {
+        boolean desFlag = true;
+        int len = nums.length;
+        for (int i=1;i<len;i++){
+            if (nums[i] > nums[i-1]){
+                desFlag = false;
+                break;
+            }
+        }
+        if (desFlag){
+            Arrays.sort(nums);
+            return;
+        }
+        for (int i=len-2;i>=0;i--){
+            Integer min = null;
+            int index = 0;
+            for (int j=i+1;j<len;j++){
+                if (nums[j]> nums[i] ){
+                    if (min == null){
+                        min = nums[j];
+                        index = j;
+                    }else {
+                        if (min > nums[j]){
+                            index =j;
+                            min = nums[j];
+                        }
+                    }
+
+                }
+            }
+            if (min == null){
+                continue;
+            }
+            min = nums[index];
+            nums[index] = nums[i];
+            nums[i] = min;
+            Arrays.sort(nums,i+1,len);
+
+            break;
+        }
+    }
 }
