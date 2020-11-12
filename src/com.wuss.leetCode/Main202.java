@@ -6,7 +6,7 @@ import java.util.Set;
 /**
  * @program leetcode
  * @description:
- * @author: wuss@wjs.com
+ * @author: wuss
  * 202. 快乐数
  * 编写一个算法来判断一个数 n 是不是快乐数。
  *

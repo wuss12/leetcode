@@ -9,7 +9,7 @@ import java.util.Stack;
 /**
  * @program leetcode
  * @description:
- * @author: wuss@wjs.com
+ * @author: wuss
  * 46 全排列
  * 给定一个 没有重复 数字的序列，返回其所有可能的全排列。
  *

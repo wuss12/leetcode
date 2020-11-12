@@ -3,7 +3,7 @@ package com.wuss.leetCode;
 /**
  * @program leetcode
  * @description:
- * @author: wuss@wjs.com
+ * @author: wuss
  * 124. 二叉树中的最大路径和
  * 给定一个非空二叉树，返回其最大路径和。
  *

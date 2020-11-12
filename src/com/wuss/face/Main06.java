@@ -5,7 +5,7 @@ import com.wuss.leetCode.TestMain;
 /**
  * @program leetcode
  * @description:
- * @author: wuss@wjs.com
+ * @author: wuss
  * @create: 2020/03/13 14:41
  * 面试题 01.06. 字符串压缩
  * 字符串压缩。利用字符重复出现的次数，编写一种方法，实现基本的字符串压缩功能。比如，

@@ -6,7 +6,7 @@ import java.util.*;
 /**
  * @program leetcode
  * @description:
- * @author: wuss@wjs.com
+ * @author: wuss
  * 56. 合并区间
  * 给出一个区间的集合，请合并所有重叠的区间。
  *

@@ -5,7 +5,7 @@ import java.util.Stack;
 /**
  * @program leetcode
  * @description:
- * @author: wuss@wjs.com
+ * @author: wuss
  * 98. 验证二叉搜索树
  * 给定一个二叉树，判断其是否是一个有效的二叉搜索树。
  *

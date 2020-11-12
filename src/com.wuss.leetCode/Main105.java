@@ -6,7 +6,7 @@ import java.util.Map;
 /**
  * @program leetcode
  * @description:a
- * @author: wuss@wjs.com
+ * @author: wuss
  * 根据一棵树的前序遍历与中序遍历构造二叉树。
  *
  * 注意:

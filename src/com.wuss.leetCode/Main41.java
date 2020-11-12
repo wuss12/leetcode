@@ -27,7 +27,7 @@ import java.util.Arrays;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  * @program leetcode
  * @description:
- * @author: wuss@wjs.com
+ * @author: wuss
  * @create: 2020/01/20 11:01
  */
 public class Main41 {

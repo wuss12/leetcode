@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * @program leetcode
  * @description:
- * @author: wuss@wjs.com
+ * @author: wuss
  * 95. 不同的二叉搜索树 II
  * 给定一个整数 n，生成所有由 1 ... n 为节点所组成的二叉搜索树。
  *

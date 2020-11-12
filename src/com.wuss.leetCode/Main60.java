@@ -6,7 +6,7 @@ import java.util.Stack;
 /**
  * @program leetcode
  * @description:
- * @author: wuss@wjs.com
+ * @author: wuss
  * 60. 第k个排列
  * 给出集合 [1,2,3,…,n]，其所有元素共有 n! 种排列。
  *

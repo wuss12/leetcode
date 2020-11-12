@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * @program leetcode
  * @description:
- * @author: wuss@wjs.com
+ * @author: wuss
  * 90. 子集 II
  * 给定一个可能包含重复元素的整数数组 nums，返回该数组所有可能的子集（幂集）。
  *

@@ -7,7 +7,7 @@ import java.util.Stack;
 /**
  * @program leetcode
  * @description:
- * @author: wuss@wjs.com
+ * @author: wuss
  * 94. 二叉树的中序遍历
  * 给定一个二叉树，返回它的中序 遍历。
  *

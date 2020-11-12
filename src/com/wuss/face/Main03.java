@@ -5,7 +5,7 @@ import com.wuss.leetCode.TestMain;
 /**
  * @program leetcode
  * @description:
- * @author: wuss@wjs.com
+ * @author: wuss
  * @create: 2020/03/13 13:31
  * 面试题 01.03. URL化
  * URL化。编写一种方法，将字符串中的空格全部替换为%20。

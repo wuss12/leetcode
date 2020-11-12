@@ -3,7 +3,7 @@ package com.wuss.leetCode;
 /**
  * @program leetcode
  * @description:
- * @author: wuss@wjs.com
+ * @author: wuss
  * 111. 二叉树的最小深度
  * 给定一个二叉树，找出其最小深度。
  *

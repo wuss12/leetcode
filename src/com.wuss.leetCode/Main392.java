@@ -3,7 +3,7 @@ package com.wuss.leetCode;
 /**
  * @program leetcode
  * @description:
- * @author: wuss@wjs.com
+ * @author: wuss
  * 392. 判断子序列
  * 给定字符串 s 和 t ，判断 s 是否为 t 的子序列。
  *

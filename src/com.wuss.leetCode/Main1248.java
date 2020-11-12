@@ -6,7 +6,7 @@ import java.util.Scanner;
 /**
  * @program leetcode
  * @description:
- * @author: wuss@wjs.com
+ * @author: wuss
  * 1248. 统计「优美子数组」
  * 给你一个整数数组 nums 和一个整数 k。
  * <p>

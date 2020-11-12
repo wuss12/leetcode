@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * @program leetcode
  * @description:
- * @author: wuss@wjs.com
+ * @author: wuss
  * 912. 排序数组
  * 给你一个整数数组 nums，请你将该数组升序排列。
  *

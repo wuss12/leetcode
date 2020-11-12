@@ -3,7 +3,7 @@ package com.wuss.leetCode;
 /**
  * @program leetcode
  * @description:
- * @author: wuss@wjs.com
+ * @author: wuss
  * 394. 字符串解码
  * 给定一个经过编码的字符串，返回它解码后的字符串。
  *

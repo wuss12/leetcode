@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 /**
  * @program leetcode
  * @description:
- * @author: wuss@wjs.com
+ * @author: wuss
  * 65. 有效数字
  * 验证给定的字符串是否可以解释为十进制数字。
  *

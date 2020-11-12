@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * @program leetcode
  * @description:
- * @author: wuss@wjs.com
+ * @author: wuss
  * 114. 二叉树展开为链表
  * 给定一个二叉树，原地将它展开为一个单链表。
  *

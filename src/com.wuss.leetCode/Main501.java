@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * @program leetcode
  * @description:
- * @author: wuss@wjs.com
+ * @author: wuss
  *
  * 501. 二叉搜索树中的众数
  * 给定一个有相同值的二叉搜索树（BST），找出 BST 中的所有众数（出现频率最高的元素）。

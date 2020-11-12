@@ -28,7 +28,7 @@ import java.util.Scanner;
  *
  * @program leetcode
  * @description:
- * @author: wuss@wjs.com
+ * @author: wuss
  * @create: 2020/01/21 09:56
  */
 public class Main43 {

@@ -6,7 +6,7 @@ import java.util.Map;
 /**
  * @program leetcode
  * @description:
- * @author: wuss@wjs.com
+ * @author: wuss
  *409. 最长回文串
  * 给定一个包含大写字母和小写字母的字符串，找到通过这些字母构造成的最长的回文串。
  *

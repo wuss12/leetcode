@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * @program leetcode
  * @description:
- * @author: wuss@wjs.com
+ * @author: wuss
  * 144. 二叉树的前序遍历
  * 给定一个二叉树，返回它的 前序 遍历。
  *

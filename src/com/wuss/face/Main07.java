@@ -3,7 +3,7 @@ package com.wuss.face;
 /**
  * @program leetcode
  * @description:
- * @author: wuss@wjs.com
+ * @author: wuss
  * @create: 2020/03/16 09:58
  * 面试题 01.07. 旋转矩阵
  * 给定一幅由N × N矩阵表示的图像，其中每个像素的大小为4字节，编写一种方法，将图像旋转90度。

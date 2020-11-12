@@ -3,7 +3,7 @@ package com.wuss.leetCode;
 /**
  * @program leetcode
  * @description:
- * @author: wuss@wjs.com
+ * @author: wuss
  * 123. 买卖股票的最佳时机 III
  * 给定一个数组，它的第 i 个元素是一支给定的股票在第 i 天的价格。
  *

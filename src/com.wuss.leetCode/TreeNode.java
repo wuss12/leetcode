@@ -44,4 +44,15 @@ public class TreeNode {
         }
         return root;
     }
+
+
+
+    public static void show(TreeNode node){
+        if (node == null){
+            return;
+        }
+        show(node.left);
+        System.out.print(node.val+" ");
+        show(node.right);
+    }
 }

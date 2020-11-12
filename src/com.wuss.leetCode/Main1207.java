@@ -6,7 +6,7 @@ import java.util.Set;
 /**
  * @program leetcode
  * @description:
- * @author: wuss@wjs.com
+ * @author: wuss
  * 1207. 独一无二的出现次数
  * 给你一个整数数组 arr，请你帮忙统计数组中每个数的出现次数。
  *

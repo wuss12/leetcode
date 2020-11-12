@@ -3,7 +3,7 @@ package com.wuss.leetCode;
 /**
  * @program leetcode
  * @description:
- * @author: wuss@wjs.com
+ * @author: wuss
  * 91. 解码方法
  * 一条包含字母 A-Z 的消息通过以下方式进行了编码：
  *

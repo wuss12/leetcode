@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * @program leetcode
  * @description:
- * @author: wuss@wjs.com
+ * @author: wuss
  * 99. 恢复二叉搜索树
  * 二叉搜索树中的两个节点被错误地交换。
  *

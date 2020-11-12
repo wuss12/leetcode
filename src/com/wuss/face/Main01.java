@@ -7,7 +7,7 @@ import java.util.Scanner;
 /**
  * @program leetcode
  * @description:
- * @author: wuss@wjs.com
+ * @author: wuss
  * @create: 2020/03/13 10:32
  *
  * 面试题 01.01. 判定字符是否唯一

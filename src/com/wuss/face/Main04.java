@@ -10,7 +10,7 @@ import java.util.Set;
 /**
  * @program leetcode
  * @description:
- * @author: wuss@wjs.com
+ * @author: wuss
  * @create: 2020/03/13 13:41
  * 面试题 01.04. 回文排列
  * 给定一个字符串，编写一个函数判定其是否为某个回文串的排列之一。

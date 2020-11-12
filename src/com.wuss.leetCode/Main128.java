@@ -6,7 +6,7 @@ import java.util.Set;
 /**
  * @program leetcode
  * @description:
- * @author: wuss@wjs.com
+ * @author: wuss
  * 128. 最长连续序列
  * 给定一个未排序的整数数组，找出最长连续序列的长度。
  *

@@ -3,7 +3,7 @@ package com.wuss.leetCode;
 /**
  * @program leetcode
  * @description:
- * @author: wuss@wjs.com
+ * @author: wuss
  * 有效括号的嵌套深度
  *
  * 有效括号字符串 仅由 "(" 和 ")" 构成，并符合下述几个条件之一：

@@ -3,7 +3,7 @@ package com.wuss.leetCode;
 /**
  * @program leetcode
  * @description:
- * @author: wuss@wjs.com
+ * @author: wuss
  * 463. 岛屿的周长
  * 给定一个包含 0 和 1 的二维网格地图，其中 1 表示陆地 0 表示水域。
  *

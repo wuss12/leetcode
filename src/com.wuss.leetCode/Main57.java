@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * @program leetcode
  * @description:
- * @author: wuss@wjs.com
+ * @author: wuss
  * 57. 插入区间
  * 给出一个无重叠的 ，按照区间起始端点排序的区间列表。
  *
@@ -22,6 +22,71 @@ import java.util.*;
  * 解释: 这是因为新的区间 [4,8] 与 [3,5],[6,7],[8,10] 重叠。
  */
 public class Main57 {
+
+
+
+//    public int[][] insert(int[][] intervals, int[] newInterval) {
+//
+//        boolean addNew = true;
+//        List<int[]> list = new ArrayList<>();
+//        int len = intervals.length;
+//        if(len == 0){
+//            return new int[][]{newInterval};
+//        }
+//        int nl = newInterval[0];
+//        int nr = newInterval[1];
+//
+//        for (int i = 0;i<len;){
+//            int[] interval = intervals[i];
+//            int l = interval[0];
+//            int r = interval[1];
+//            if (nl > r || nr < l){
+//                list.add(interval);
+//                i++;
+//                continue;
+//            }
+//            addNew = false;
+//
+//            while (i<len && !(nl > r || nr <l)){
+//                nl = Math.min(nl,l);
+//                nr = Math.max(nr,r);
+//                i++;
+//                if (i == len){
+//                    break;
+//                }
+//                interval = intervals[i];
+//                l = interval[0];
+//                r = interval[1];
+//
+//
+//            }
+//            list.add(new int[]{nl,nr});
+//        }
+//        if (addNew){
+//            int l = newInterval[0];
+//            int r = newInterval[1];
+//            for (int i=list.size()-1;i>=0;i--){
+//                int[] ints = list.get(i);
+//                if (l> ints[1]){
+//                    list.add(i+1,newInterval);
+//                    break;
+//                }
+//                if (r < ints[0] && (i ==0 || l> list.get(i-1)[1])){
+//
+//                    list.add(i,newInterval);
+//                    break;
+//                }
+//            }
+//        }
+//
+//        int[][] result = new int[list.size()][];
+//        int i=0;
+//        for (int[] ints : list) {
+//            result[i++] = ints;
+//        }
+//        return result;
+//    }
+
     public int[][] insert(int[][] intervals, int[] newInterval) {
         int len = intervals.length;
         int[][] result ;

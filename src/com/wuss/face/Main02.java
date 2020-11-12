@@ -5,7 +5,7 @@ import com.wuss.leetCode.TestMain;
 /**
  * @program leetcode
  * @description:
- * @author: wuss@wjs.com
+ * @author: wuss
  * @create: 2020/03/13 13:24
  * 面试题 01.02. 判定是否互为字符重排
  * 给定两个字符串 s1 和 s2，请编写一个程序，确定其中一个字符串的字符重新排列后，能否变成另一个字符串。

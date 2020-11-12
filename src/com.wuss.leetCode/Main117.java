@@ -6,7 +6,7 @@ import java.util.LinkedList;
 /**
  * @program leetcode
  * @description:
- * @author: wuss@wjs.com
+ * @author: wuss
  * 117. 填充每个节点的下一个右侧节点指针 II
  * 给定一个二叉树
  *

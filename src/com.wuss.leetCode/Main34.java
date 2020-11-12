@@ -22,7 +22,7 @@ package com.wuss.leetCode;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  * @program leetcode
  * @description:
- * @author: wuss@wjs.com
+ * @author: wuss
  * @create: 2020/01/19 15:33
  */
 public class Main34 {

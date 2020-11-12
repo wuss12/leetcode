@@ -5,7 +5,7 @@ import com.wuss.leetCode.ListNode;
 /**
  * @program leetcode
  * @description:
- * @author: wuss@wjs.com
+ * @author: wuss
  * 02.01. 移除重复节点
  * 编写代码，移除未排序链表中的重复节点。保留最开始出现的节点。
  *

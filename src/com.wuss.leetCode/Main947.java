@@ -3,7 +3,7 @@ package com.wuss.leetCode;
 /**
  * @program leetcode
  * @description:
- * @author: wuss@wjs.com
+ * @author: wuss
  * 941. 有效的山脉数组
  * 给定一个整数数组 A，如果它是有效的山脉数组就返回 true，否则返回 false。
  *

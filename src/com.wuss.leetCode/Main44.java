@@ -54,7 +54,7 @@ import java.util.Arrays;
  *
  * @program leetcode
  * @description:
- * @author: wuss@wjs.com
+ * @author: wuss
  * @create: 2020/02/03 10:34
  * "adceb"
  * "*a*b"

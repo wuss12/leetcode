@@ -5,7 +5,7 @@ import java.util.Stack;
 /**
  * @program leetcode
  * @description:
- * @author: wuss@wjs.com
+ * @author: wuss
  * 92. 反转链表 II
  * 反转从位置 m 到 n 的链表。请使用一趟扫描完成反转。
  * <p>

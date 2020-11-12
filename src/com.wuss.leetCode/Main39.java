@@ -40,7 +40,7 @@ import java.util.Stack;
  *
  * @program leetcode
  * @description:
- * @author: wuss@wjs.com
+ * @author: wuss
  * @create: 2020/01/20 09:49
  */
 public class Main39 {

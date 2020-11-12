@@ -3,7 +3,7 @@ package com.wuss.leetCode;
 /**
  * @program leetcode
  * @description:
- * @author: wuss@wjs.com
+ * @author: wuss
  * 1095. 山脉数组中查找目标值
  * （这是一个 交互式问题 ）
  *

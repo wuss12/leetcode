@@ -3,7 +3,7 @@ package com.wuss.leetCode;
 /**
  * @program leetcode
  * @description:
- * @author: wuss@wjs.com
+ * @author: wuss
  * 235. 二叉搜索树的最近公共祖先
  * 给定一个二叉搜索树, 找到该树中两个指定节点的最近公共祖先。
  *
