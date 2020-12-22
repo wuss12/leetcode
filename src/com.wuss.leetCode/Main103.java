@@ -2,6 +2,7 @@ package com.wuss.leetCode;
 
 import javax.xml.soap.Node;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
@@ -86,58 +87,98 @@ public class Main103 {
 //    }
 
 //    //method2 递归
-    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
-        List<List<Integer>> resultList = new ArrayList<>();
-        if (root == null) {
-            return resultList;
-        }
-        List<TreeNode> nodeList = new ArrayList<>();
-        nodeList.add(root);
-        zigzagLevelOrder(nodeList,resultList,true);
-        return resultList;
-    }
+//    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+//        List<List<Integer>> resultList = new ArrayList<>();
+//        if (root == null) {
+//            return resultList;
+//        }
+//        List<TreeNode> nodeList = new ArrayList<>();
+//        nodeList.add(root);
+//        zigzagLevelOrder(nodeList,resultList,true);
+//        return resultList;
+//    }
+//
+//    public void zigzagLevelOrder(List<TreeNode> nodeList,List<List<Integer>> resultList,boolean leftFirst){
+//        if (nodeList.isEmpty()){
+//            return ;
+//        }
+//
+//        int size = nodeList.size();
+//        List<Integer> listI = new ArrayList<>(size);
+//        TreeNode temp;
+//        if (leftFirst){
+//            for (int i=0;i<size;i++){
+//                temp = nodeList.get(i);
+//                if (temp != null){
+//                    listI.add(temp.val);
+//                }
+//            }
+//        }else {
+//           for (int i = size-1;i>=0;i--){
+//               temp = nodeList.get(i);
+//               if (temp != null){
+//                   listI.add(temp.val);
+//               }
+//           }
+//        }
+//
+//
+//        resultList.add(listI);
+//        List<TreeNode> newList = new ArrayList<>();
+//        for (int i = 0;i<= size-1;i++){
+//            temp = nodeList.get(i);
+//            if (temp == null){
+//                continue;
+//            }
+//            if (temp.left!= null){
+//                newList.add(temp.left);
+//            }
+//            if (temp.right!= null){
+//                newList.add(temp.right);
+//            }
+//        }
+//        zigzagLevelOrder(newList,resultList,!leftFirst);
+//    }
 
-    public void zigzagLevelOrder(List<TreeNode> nodeList,List<List<Integer>> resultList,boolean leftFirst){
-        if (nodeList.isEmpty()){
-            return ;
-        }
 
-        int size = nodeList.size();
-        List<Integer> listI = new ArrayList<>(size);
-        TreeNode temp;
-        if (leftFirst){
+    //method3
+
+    public List<List<Integer>>  zigzagLevelOrder(TreeNode root){
+        List<List<Integer>> lists = new ArrayList<>();
+
+        if (root == null){
+            return lists;
+        }
+        Deque<TreeNode> deque = new LinkedList<>();
+        boolean leftToR = true;
+        deque.add(root);
+
+        TreeNode temp = null;
+        while (!deque.isEmpty()){
+            int size = deque.size();
+            List<Integer> list = new ArrayList<>();
             for (int i=0;i<size;i++){
-                temp = nodeList.get(i);
-                if (temp != null){
-                    listI.add(temp.val);
+                temp = deque.poll();
+                list.add(temp.val);
+                if ( temp.left!=null ){
+                    deque.offer(temp.left);
+                }
+                if ( temp.right!=null ){
+                    deque.offer(temp.right);
                 }
             }
-        }else {
-           for (int i = size-1;i>=0;i--){
-               temp = nodeList.get(i);
-               if (temp != null){
-                   listI.add(temp.val);
-               }
-           }
+            if (!leftToR){
+                Collections.reverse(list);
+            }
+            lists.add(list);
+            leftToR = !leftToR;
+
         }
 
+        return lists;
 
-        resultList.add(listI);
-        List<TreeNode> newList = new ArrayList<>();
-        for (int i = 0;i<= size-1;i++){
-            temp = nodeList.get(i);
-            if (temp == null){
-                continue;
-            }
-            if (temp.left!= null){
-                newList.add(temp.left);
-            }
-            if (temp.right!= null){
-                newList.add(temp.right);
-            }
-        }
-        zigzagLevelOrder(newList,resultList,!leftFirst);
     }
+
 
     public static void main(String[] args) {
         Main103 main103 = new Main103();
