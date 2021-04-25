@@ -13,30 +13,63 @@ import java.util.List;
  */
 public class Main897 {
 
-    List<Integer> list = new ArrayList();
+    //method 1
+//    List<Integer> list = new ArrayList();
+//    public TreeNode increasingBST(TreeNode root) {
+//        if(root == null){
+//            return null;
+//        }
+//        searchBST(root);
+//        TreeNode root1 = new TreeNode();
+//        TreeNode temp = root1;
+//        for(int i:list){
+//            temp.right = new TreeNode(i);
+//            temp = temp.right;
+//        }
+//
+//        return root1.right;
+//    }
+//
+//    public void searchBST(TreeNode root) {
+//        if(root == null){
+//            return ;
+//        }
+//        searchBST(root.left);
+//        list.add(root.val);
+//        searchBST(root.right);
+//
+//    }
+
+
+    TreeNode rest;
     public TreeNode increasingBST(TreeNode root) {
         if(root == null){
             return null;
         }
-        searchBST(root);
-        TreeNode root1 = new TreeNode();
-        TreeNode temp = root1;
-        for(int i:list){
-            temp.right = new TreeNode(i);
-            temp = temp.right;
-        }
-
-        return root1.right;
+        rest = new TreeNode();
+        TreeNode temp = rest;
+        inorder(root);
+        return temp.right;
     }
 
-    public void searchBST(TreeNode root) {
-        if(root == null){
-            return ;
+    public void inorder(TreeNode root){
+        if (root == null){
+            return;
         }
-        searchBST(root.left);
-        list.add(root.val);
-        searchBST(root.right);
+        inorder(root.left);
+        rest.right = root;
+        root.left = null;
+        rest = root;
+        inorder(root.right);
+    }
 
+    public static void main(String[] args) {
+        Main897 main = new Main897();
+        TreeNode treeNode = new TreeNode(2);
+        treeNode.left = new TreeNode(1);
+        treeNode.right = new TreeNode(3);
+        TreeNode treeNode1 = main.increasingBST(treeNode);
+        TreeNode.show(treeNode1);
     }
 
 }
