@@ -1,5 +1,9 @@
 package com.wuss.leetCode;
 
+import java.util.Arrays;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
+
 /**
  * @program leetcode
  * @description:
@@ -54,33 +58,81 @@ public class Main1011 {
         System.out.println(shipWithinDays(arrs,d));
     }
 
+//    public static int shipWithinDays(int[] weights, int D) {
+//        // 确定二分查找左右边界
+//        int left = Arrays.stream(weights).max().getAsInt(), right = Arrays.stream(weights).sum();
+//        while (left < right) {
+//            int mid = (left + right) / 2;
+//            // need 为需要运送的天数
+//            // cur 为当前这一天已经运送的包裹重量之和
+//            int need = 1, cur = 0;
+//            for (int weight : weights) {
+//                if (cur + weight > mid) {
+//                    ++need;
+//                    cur = 0;
+//                }
+//                cur += weight;
+//            }
+//            if (need <= D) {
+//                right = mid;
+//            } else {
+//                left = mid + 1;
+//            }
+//        }
+//        return left;
+//    }
+
+
 
     public static int shipWithinDays(int[] weights, int D) {
-        int sum = 0;
-        for (int arr : weights) {
-            sum += arr;
-        }
-        int avg = (sum+D-1)/D;
-
-        for (int i= avg;i<=sum;i++){
-            int d = 0;
-            int sum0 = 0;
+        int l = Arrays.stream(weights).max().getAsInt();
+        int r = Arrays.stream(weights).sum();
+        int mid = 0;
+        while (l<r){
+            mid = (l+r)>>1;
+            int need = 1,sum = 0;
             for (int weight : weights) {
-                if (weight>i){
-                    d = sum;
-                    break;
+                if (sum + weight> mid){
+                    need++;
+                    sum = 0;
                 }
-                if (sum0 + weight <= i){
-                    sum0 += weight;
-                    continue;
-                }
-                d++;
-                sum0 = weight;
+                sum += weight;
             }
-            if (d <= D-1){
-                return i;
+            if (need<= D){
+                r = mid;
+            }else {
+                l = mid+1;
             }
         }
-        return 0;
+        return l;
     }
+
+//    public static int shipWithinDays(int[] weights, int D) {
+//        int sum = 0;
+//        for (int arr : weights) {
+//            sum += arr;
+//        }
+//        int avg = (sum+D-1)/D;
+//
+//        for (int i= avg;i<=sum;i++){
+//            int d = 0;
+//            int sum0 = 0;
+//            for (int weight : weights) {
+//                if (weight>i){
+//                    d = sum;
+//                    break;
+//                }
+//                if (sum0 + weight <= i){
+//                    sum0 += weight;
+//                    continue;
+//                }
+//                d++;
+//                sum0 = weight;
+//            }
+//            if (d <= D-1){
+//                return i;
+//            }
+//        }
+//        return 0;
+//    }
 }
